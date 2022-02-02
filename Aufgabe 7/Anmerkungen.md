@@ -1,0 +1,1 @@
+Aufgabe 7 hat vier Lösungen
