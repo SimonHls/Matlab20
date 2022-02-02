@@ -6,8 +6,6 @@
 - Wann Punkt und wann nicht?
     - *Regeln nachreichen*
 
----
-
 ## Funktionen und Befehle
 
 ### Mit Zahlen arbeiten
