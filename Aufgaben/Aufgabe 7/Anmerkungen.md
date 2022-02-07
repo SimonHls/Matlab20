@@ -1,12 +1,15 @@
-Aufgabe 7 hat vier Lösungen
+Gegeben war: Die Gleichung von Aufgabe 7 im Intervall 1:10 hat vier Lösungen
 
 Ich habe zwei Lösungswege gefunden:
 
+#### Aufgabe7easy.m
 - **Aufgabe7easy.m** ist die einfachste Lösung, die ich gefunden habe.
 - Hier werden mit der Funktion vpasolve einfach manuell alle Intervalle abgetestet, in denen eine Lösung ist.
 - Das Problem ist, dass diese Lösung nur funktioniert, wenn man die Funktionen vorher plottet um die Anzahl der Lösungen und deren Position zu finden. 
 - Außerdem muss man die Prüfintervalle manuell einstellen. Das ist nicht sehr elegant, aber einfach.
 
+
+#### Aufgabe7.m 
 - **Aufgabe7.m** funktioniert zusammen mit **getAllSolutions.m**
 1. An die funktion *getAllSolutions.m* werden die Funktion, die relevante Unbekannte, das Suchintervall und eine Zählervariable iterations übergeben.
 2. Iterations sei 10, dann wird 10 mal an einer Zufälligen Stelle im Intervall nach Lösungen gesucht und jede gefundene Lösung gespeichert.
