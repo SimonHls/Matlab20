@@ -7,7 +7,7 @@ function arr = getAllSolutions(eqn, x, rng, steps)
 %   eqn         Eingabegleichung
 %   x           Variable
 %   rng         Interval für die Lösungssuche
-%   steps       Gibt an, in wie vielen Schritten die Gleichung untersucht wird
+%   steps       Gibt an, in wie vielen Schritten die Gelichung untersucht wird
 
 %solutions speichert alle gefundenen Lösungen
 solutions = zeros(1, steps);

@@ -4,6 +4,6 @@ function Aufgabe7()
 % gefunden werden.
 syms x;
 eqn = x.*log(0.1.*x) == tan(x);
-solution = getAllSolutions(eqn, x, [0,10], 15);
+solution = getAllSolutions(eqn, x, [0,10], 10);
 disp('Gefundene Lösungen: ');
 disp(solution);

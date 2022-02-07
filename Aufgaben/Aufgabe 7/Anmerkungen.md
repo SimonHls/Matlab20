@@ -11,11 +11,7 @@ Ich habe zwei Lösungswege gefunden:
 
 #### Aufgabe7.m 
 - **Aufgabe7.m** funktioniert zusammen mit **getAllSolutions.m**
-1. An die funktion *getAllSolutions.m* werden die Funktion, die relevante Unbekannte, das Suchintervall und eine Zählervariable *'iterations'* übergeben.
-2. *'iterations'* sei 10, dann wird 10 mal an einer zufälligen Stelle im Intervall nach Lösungen gesucht und jede gefundene Lösung gespeichert.
-3. Nach den 10 Durchgängen wird der Lösungsvektor nach Duplikaten durchsucht und die bereinigte Form wird als Vektor übergeben.
-- **Es gibt 3 Probleme hierbei:**
-    1. Wenn man *'iterations'* zu klein wählt, dann werden evtl. nicht alle Lösungen durch Zufall gefunden. Erfahrungsgemäß sollte *'iterations'* min. 3x der Anzahl der erwarteten Lösungen ensprechen. Im Zweifel höher. **ACHTUNG, wird sehr langsam! *'iterations'* = 100 ist schon viel.**
-    2. Es wird jede gefundene Lösung zunächst abgespeichert. Dadurch entstehen Dopplungen, was unschön ist. Man kann theoretisch Prüfen, ob der Wert schomal gefunden wurde und ihn dann nicht speichern, weiß aber nicht wie. *isEmpty()* hab ich nicht verstanden, ist aber glaube ich die Lösung.
-    3. *Baut auf 2. auf:* Das Entfernen der Duplikate dauert ewig und Laufzeit steigt mit Erhöhung der *'iterations'* Exponentiell. Das nix gut. Lösung von Problem 2. würde 3. Lösen.
-   
+1. An die funktion *getAllSolutions.m* werden die Funktion, die relevante Unbekannte, das Suchintervall und eine Zählervariable *'Steps'* übergeben.
+2. Steps gibt an, in wie vielen Teilschritten das angegebene Interval durchschritten werden soll. Die Funktion *vbsolve()* gibt immer die nächste Lösung zu einem bestimmten Punkt aus. Durch die Schrittweite werden Punkte in regelmäßigen Abstängen im Intervall auf die nächste Lösungsstelle untersucht. 
+3. Alle gefundenen Lösungen werden gespeichert. Am Ende werden Dopplungen aus dem Lösungsvektor entfernt. Übrig bleiben die einzelnen Lösungen als Ausgabewert.
+- Problem: Das Verfahren ist langsam, da viele Werte mehrfach untersucht und gespeichert werden müssen. Außerdem können bei zu großer Schrittweite Lösungen übersehen werden, allerdings führen zu kleine Schritte zu unnötig langer Rechenzeit. Es ist schwer, einen allgemein gültigen Kompromiss aus maximaler Ganauigkeit und minimaler Rechenzeit zu finden.
