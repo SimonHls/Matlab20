@@ -12,7 +12,7 @@ function arr = getAllSolutions(eqn, x, rng, steps)
 solutions = [];
 
 % stepwidth ist die Schrittweite durch das Intervall
-stepwidth = (max(rng) - min(rng)) / steps
+stepwidth = (max(rng) - min(rng)) / steps;
 
 % Schreitet in 'steps' Schritten durch das Intervall
 for k = 1:steps
@@ -26,7 +26,7 @@ for k = 1:steps
         disp(cs);
         solutions(length(solutions)+1) = cs;
     end
-    
+
 end
 
 % Am Ende werden alle Duplikate im Lösungsvektor entfernt und die Lösung
