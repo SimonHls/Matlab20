@@ -1,4 +1,4 @@
-function [m, c, y] = loadchain(filename)
+function [N, m, c, y] = loadchain(filename)
 % Lädt Parameter aus einer .chain Datei
 % Parameter:
 %   filename      Name der .chain Datei im Verzeichnis
@@ -8,39 +8,37 @@ function [m, c, y] = loadchain(filename)
 %   c             Federsteifigkeit
 %   y             Anfangsauslenkung
 
-%ACHTUNG! FUNKTIONIERT NICHT MIT LONG.CHAIN!!! Weiß nicht wieso
-
 clc; 
+
+% Format specifier zum einlesen für fscanf
+% FRAGE: WIE FUNKTIONIEREN DIE GENAU?
+formatSpec = "%f\n";
 
 fid = fopen(filename + ".chain", "r");
 
 % 1. Zeile überspringen
-disp("suche N");
 fgetl(fid);
 
-% 2. Zeile ist N, auslesen als float (%f)
-N = fscanf(fid, "%d");
+% 2. Zeile ist N
+N = fscanf(fid, formatSpec);
 
 % 3. Zeile überspringen
-disp("suche m");
-fgetl(fid);        
+fgetl(fid);
 
 % 4. Zeile ist m, Anzahl der Zeichen ist N
-m = fscanf(fid, "%f", [1, N]);
+m = fscanf(fid, formatSpec, [1, N]);
 
 % 5. Zeile überspringen
-disp("suche c");
-fgetl(fid)    
+fgetl(fid);  
 
 % 6. Zeile ist c, Anzahl Zeichen = N + 1
-c = fscanf(fid, "%f", [1, N + 1]);
+c = fscanf(fid, formatSpec, (N + 1)');
 
 % 7. Überspringen
-disp("suche y");
-fgetl(fid)     
+fgetl(fid);   
 
 % 8. Zeile ist y, Anzahl Zeichen ist N
-y = fscanf(fid, "%f", [1, N]);
+y = fscanf(fid, formatSpec, N);
 
 % Datei schließen
 fclose(fid);
