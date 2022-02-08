@@ -26,6 +26,7 @@ for k = 1:steps
         disp(cs);
         solutions(length(solutions)+1) = cs;
     end
+    
 end
 
 % Am Ende werden alle Duplikate im Lösungsvektor entfernt und die Lösung
