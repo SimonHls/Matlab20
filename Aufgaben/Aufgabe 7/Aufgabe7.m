@@ -5,7 +5,7 @@ function Aufgabe7()
 
 %ACHTUNG:Lösung geht nicht an Hochschul-Rechnern, da die Toolbox fehlt.
 
-clear all, clc
+clear all, clc;
 
 % Symbol x deklarieren. (Funktioniert nur mit Symbolic Math Toolbox) 
 syms x;
