@@ -1,12 +1,15 @@
-function savechain(m, c, y, filename)
-% speichert Daten einer Kette als .chain Datei
+function savechain(chain, filename)
+% speichert Daten eines chain Objektes als .chain Datei
 % Parameter:
-%    m           Masse
-%    c           Federsteifigkeit
-%    y           Anfangsauslenkung
+%    chain-objekt
 %    filename    Name der Datei (ohne Suffix)
 
 fid = fopen(filename + ".chain", "w");
+
+% Parameter aus chain Objekt auslesen
+m = chain.m;
+c = chain.c;
+y = chain.y;
 
 % N enspricht der Anzahl der Elemente in m (oder y)
 N = max(size(m));
