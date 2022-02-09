@@ -1,26 +1,40 @@
+% Diese Funktion ist absolut unnötig, bitte ignorieren.
+% Loadchain und savechain funktionieren auch so.
+% Bleibt nur drinnen, falls Klassen mal vorkommen.
+
 classdef Chain
+% Chain-Objekt mit folgenden Parametern:
+%   m       Masse
+%   c       Federsteifigkeit
+%   y       Anfangsauslenkung
+
+% FIY: Objekte erzeugt man mit 'name' = Chain(m, c, y)
+% Zugriff auf Parameter dann z.B. c = 'name'.c
+
     properties
-        m
-        c
-        y
+        m;
+        c;
+        y;
     end
+
     methods
-        % Constructor
+
+        % Constructor gibt Eingabemaske vor
         function ch = Chain(m, c, y)
+
+            % nargin = Anzahl der übergebenen Parameter
             if nargin > 0
                 ch.m = m;
                 ch.c = c;
                 ch.y = y;
             end
+
         end
-        function obj = set.m(obj, m)
-            obj.m = m;
-        end
-        function obj = set.c(obj, c)
-            obj.c = c;
-        end
-        function obj = set.y(obj, y)
-            obj.y = y;
-        end
+
+        % Man kann auch mit gettern und settern Datenzugriff
+        % steuern. Dafür function obj = set.m(obj, m) etc.
+        % weiß aber nicht genau wie das geht...
+
     end
+
 end
