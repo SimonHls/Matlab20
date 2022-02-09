@@ -43,9 +43,10 @@ Enthält einige Tipps und Erklärungen zu Funktionen von MatLab.
 ### Datenstrukturen
 Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. #
 - **cell(x,y)** - *Erstellt ein Cell-Array, welches an jeder Stelle unterschiedliche Datentypen (Auch Arrays) speichern kann. Zugriff auf Stellen mit 'Name{x,y}'*
-- Man kan 'struct'-Objekte erstellen. Diese können wie eine Klasse mit Name.attribut alles mögliche speichern, ohne dass man die Klasse erst erstellen muss.
+- Man kan 'struct'-Objekte erstellen. Diese können wie eine Klasse mit *Name.Attribut* , *(z.B. p1.age = 12)* alles mögliche speichern, ohne dass man die Klasse erst erstellen muss.
 
 ### Klassen
+*Vermutlich kommen Klassen überhaupt nicht dran. Hier aus Interesse:*
 **Beispiel:**
 ``` Matlab
 classdef Beispiel
