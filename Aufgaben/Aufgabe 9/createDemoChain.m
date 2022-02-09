@@ -1,5 +1,5 @@
 function createDemoChain()
-% Hilfsfunktion, die die Datei demochain erzeugt.
+% Hilfsfunktion, die die Datei demo.chain erzeugt.
 % Nachkommastellen sind nicht wie in Vorlage. Egal?
 
 m = [1, 2, 2, 1];
