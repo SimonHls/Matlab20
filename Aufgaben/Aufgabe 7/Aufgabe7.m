@@ -3,13 +3,15 @@ function Aufgabe7()
 % Es ist möglich, dass bei zu wenig Durchläufen nicht alle Lösungen
 % gefunden werden.
 
+%ACHTUNG:Lösung geht nicht an Hochschul-Rechnern, da die Toolbox fehlt.
+
 clear all, clc
 
 % Symbol x deklarieren. (Funktioniert nur mit Symbolic Math Toolbox) 
 syms x;
 
-% Performance erhöhen durch weniger Stellen (1.6s vs 2.3s)
-digits(32);
+% Performance erhöhen durch weniger Stellen (1.6s vs 2.3s Laufzeit)
+digits(6);
 
 % Gleichung 
 eqn = x.*log(0.1.*x) == tan(x);
