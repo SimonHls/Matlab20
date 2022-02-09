@@ -40,8 +40,9 @@ Enthält einige Tipps und Erklärungen zu Funktionen von MatLab.
 - **dims = fscanf(fid, "%d %d\n", 2);** - *Hier werden Zweiervektoren ausgelesen, die nach dem Format 'Zahl, Zahl (nächste Zeile) Zahl, Zahl, usw.' gespeichert sind*
 - **fclose(fid)** - *Schließt die Datei fid*
 
-### Datentypen
+### Datenstrukturen
 Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. #
+- **cell(x,y)** - *Erstellt ein Cell-Array, welches an jeder Stelle unterschiedliche Datentypen (Auch Arrays) speichern kann. Zugriff auf Stellen mit 'Name{x,y}'*
 
 ### Klassen
 **Beispiel:**

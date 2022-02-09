@@ -1,3 +1,6 @@
+% UNNÖTIG! Loadchain und savechain funktionieren auch so.
+% Bleibt nur drinnen, falls Klassen ml vorkommen.
+
 classdef Chain
 % Chain-Objekt mit folgenden Parametern:
 %   m       Masse
@@ -24,7 +27,7 @@ classdef Chain
                 ch.c = c;
                 ch.y = y;
             end
-            
+
         end
 
         % Man kann auch mit gettern und settern Datenzugriff

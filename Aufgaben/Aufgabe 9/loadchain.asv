@@ -1,4 +1,4 @@
-function chain = loadchain(filename)
+function chain = loadChain(filename)
 % Lädt Parameter aus einer .chain Datei
 % Parameter:
 %   filename      Name der .chain Datei im Verzeichnis
@@ -18,7 +18,7 @@ fid = fopen(filename + ".chain", "r");
 %Falls keine Datei gefunden:
 if (fid == -1)
     disp("Es wurde keine Datei mit dem Namen '" + ...
-        filename + "' gefunden.");
+        filename + "' gefunden.").
     chain.m = [];
     chain.c = [];
     chain.y = [];
@@ -35,19 +35,21 @@ N = fscanf(fid, formatSpec);
 fgetl(fid);
 
 % 4. Zeile ist m, Anzahl der Zeichen ist N
-chain.m = fscanf(fid, formatSpec, [1, N]);
+m = fscanf(fid, formatSpec, [1, N]);
 
 % 5. Zeile überspringen
 fgetl(fid);  
 
 % 6. Zeile ist c, Anzahl Zeichen = N + 1
-chain.c = fscanf(fid, formatSpec, (N + 1)');
+c = fscanf(fid, formatSpec, (N + 1)');
 
 % 7. Überspringen
 fgetl(fid);   
 
 % 8. Zeile ist y, Anzahl Zeichen ist N
-chain.y = fscanf(fid, formatSpec, N);
+y = fscanf(fid, formatSpec, N);
+
+chain = Chain(m, c, y);
 
 % Datei schließen
 fclose(fid);
