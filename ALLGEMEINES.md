@@ -1,4 +1,5 @@
-# Allgemeines und Hinweise
+# Tipps und Hinweise
+Enthält einige Tipps und Erklärungen zu Funktionen von MatLab. 
 
 ## Tipps
 
@@ -14,6 +15,7 @@
 - **fzero(Funktion, BereichAlsMatrix oder Wert)** - *Gibt die Nullstellen im Bereich aus. Bereichsmatrix ist [linkeGrenze, rechteGrenze]. Bei mehr als einer Lösung im Bereich gibt er trotzdem nur eine Nullstelle aus. Anstatt der Bereichsmatrix kann man auch einen Wert eingeben. Dann gibt die Funktion die Nullstelle aus, die am nächsten an diesem Wert liegt.*
 - **solve(gleichung, Variable zum Auflösen)** - *Für Polynomgleichungen. Eingabe ist eine Gleichung und die gewünschte Variable zur Auflösung.*
 - **vpasolve(gleichung, Variable zum Auflösen, Positionoder Interval, ggf. 'Random', true)** - *Löst Gleichungen numerisch. Variable muss als "syms x;" deklariert werden. "'Random', true" gibt eine zufällige Lösung im Intervall aus, sonst wird immer die geringste Lösung ausgegeben. Für alle Lösungen im Intervall muss die Funktion mehrfach ausgeführt werden.*
+  
 ### Eingabe und Ausgabe
 - **fprintf("Text und Zeichen", Wert1, Wert2, Wert...)** - *Druckt Werte nach Vorgabe der in den Anführungszeichen definierten Parameter*
     - \n *- nächste Zeile*
