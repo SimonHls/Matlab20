@@ -39,3 +39,34 @@ Enthält einige Tipps und Erklärungen zu Funktionen von MatLab.
 - **zahl = fscanf(fid, "%f")** - *fscanf ließt etwas definiertes aus der Datei 'fid' ein, hier z.B. eine Fließkommzahl %f, und speichert diese als 'zahl'*
 - **dims = fscanf(fid, "%d %d\n", 2);** - *Hier werden Zweiervektoren ausgelesen, die nach dem Format 'Zahl, Zahl (nächste Zeile) Zahl, Zahl, usw.' gespeichert sind*
 - **fclose(fid)** - *Schließt die Datei fid*
+
+### Datentypen
+Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. #
+
+### Klassen
+**Beispiel:**
+``` Matlab
+classdef Beispiel
+    properties
+        var1;
+        var2;
+        usw;
+    end
+    methods
+        % constructor
+        function bsp = Beispiel(var, var2, var3)
+            if nargin > 0
+                bsp.var1 = var1;
+                bsp.var2 = var2;
+                bsp.var3 = var3;
+            end
+        end
+    end
+end
+```
+
+**Zugriff auf Objekte:**
+- Erstellen von Objekt: *testklasse = Beispiel()*
+- Erstellen mit Kontruktor setzt Parameter sofort: *testklasse = Beispiel(var1, var2, var3)*
+- Zugreifen auf Inhalt: *var1InKlasse = testklasse.var1* 
+- Unter functions können auch komplexere Operationen implementiert werden, die man erreicht mit : *funktionInKlasse = testklasse.tuEtwas(parameter)*
