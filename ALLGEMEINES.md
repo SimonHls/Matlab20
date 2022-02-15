@@ -1,11 +1,15 @@
 # Tipps und Hinweise
 Enthält einige Tipps und Erklärungen zu Funktionen von MatLab. 
 
+## Spekulation
+Vermutlich wichtige Themen:
+- Differentialgleichung programmieren / lösen
+- 
 ## Tipps
 
 - Quadratische Matrizen vermeiden, indem man z.B. unterschiedliche Schrittweiten in der Darstellung benutzt. So bekommt man bei falscher Verwendung von einem '.' eine Fehlermeldung.
 - Wann Punkt und wann nicht?
-    - *Regeln nachreichen*
+    - *Zahl hoch Vektor* **-> Punkt**
 
 ## Funktionen und Befehle
 
@@ -29,6 +33,7 @@ Enthält einige Tipps und Erklärungen zu Funktionen von MatLab.
     - %s *- gibt String aus*
     - %% *- gibt Prozentzeichen aus*
 - **input("Text")** - *Fordert eine Nutzereingabe an. Der Text wird vor der Eingabe angezeigt. Wenn man Text eingeben will, muss man diesen in "" setzen.*
+- **plot(x, y, "b*")** - *Plottet eine Funktion mit x und y Werten. Das Argument "b***" ist optional und plottet dann anstatt als kurve als Sterne. Geht z.B. auch mit 'b.'.*
 
 ### Mit Dateien arbeiten
 - **fid = fopen(Dateiname, "r")** - *Öffnet eine Datei und nennt diese 'fid'*
