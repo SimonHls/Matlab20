@@ -58,12 +58,14 @@ Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespe
 
 #### Vorgehen für Lösungen:
 - Form: y'=f(t,y); y(0) = y0
-- Gelöst durch **[t, y] = ode45(f, tspan, y0)** *//mit f = Funktion; tpan = Zeitspanne als [0, tmax] (der Vektor kann auch länger sein als 2, dann werden die Werte an den definierten Stellen ausgegeben); y0 = y-Wert an der Stelle 0 (Startwert/e, ggf. als Vektor)*
+- Gelöst durch **[t, y] = ode45(f, tspan, y0)**  *, mit f = Funktion; tpan = Zeitspanne als [0, tmax] (der Vektor kann auch länger sein als 2, dann werden die Werte an den definierten Stellen ausgegeben); y0 = y-Wert an der Stelle 0 (Startwert/e, ggf. als Vektor)*
 - ggf. Plot formatieren.
 
-#### Beispiele für Funktionen:
+#### Beispiele:
 
-*Bsp. 1: direkte Funktion*
+**Beispiel 1**
+
+*Bsp. 1: Direkte Funktion*
 ```Matlab
 function dy = BeispielDGL(t, y)
 
@@ -83,6 +85,16 @@ dy4 = (1/m2)*(c2*y(1) - (c2+c3)*y(2));
 dy = [dy1; dy2; dy3; dy4]; %SPALTENVEKTOR!!! (; statt ,)
 ```
 
+*Bsp. 1: Direkte Lösung*
+``` Matlab
+[t, y] = ode45(@BeispielDGL, [0 30], [1 0 0 0]);
+plot(t, y(:,1), t, y(:,2))
+legend("x_1(t)", "x_2(t)", "Location", "best");
+```
+</br>
+
+**Beispiel 2**
+
 *Bsp. 2: Matrix Funktion*
 ```Matlab
 function dy = BeispielDGLMatix(t, y, M, C)
@@ -95,18 +107,7 @@ dv = -inv(M)*C*x;
 dy = [dx; dv];
 ```
 
-#### Beispiel für Lösung
-
-*Bsp. 1: Direkte Lösung*
-
-``` Matlab
-[t, y] = ode45(@BeispielDGL, [0 30], [1 0 0 0]);
-plot(t, y(:,1), t, y(:,2))
-legend("x_1(t)", "x_2(t)", "Location", "best");
-```
-
 *Bsp. 2: Matrix Lösung*
-
 ``` Matlab
 % Parameter
 m1 = 1.0;
@@ -116,7 +117,7 @@ c2 = 0.6;
 c3 = 4.0;
 
 % Matrizen erstellen
-M = [m1, 0; 0, m2];
+M = [m1, 0; 0, m2]; % Diagonalmatrix aus den Massen
 C = [c1+c2, -c2; -c2, c2+c3];
 
 % Die Funktion Matschwing2d braucht 4 Variablen, ode45 erwartet aber2,
@@ -127,6 +128,53 @@ fhilf = @(t,y) matschwing2d(t, y, M, C);
 plot(t, y(:,1), t, y(:,2))
 legend("x_1(t)", "x_2(t)", "Location", "best");
 ```
+</br>
+
+**Beispiel 3 - Lösung für N-Dimensionale Schwingerkette**
+
+*Bsp. 3 N-dim Funktion*
+```Matlab
+function dy = schwingNd(t, y, M, C)
+% rechte Seite der DGL bei N-dimensionaler Schwingerkette
+
+N = length(y)/2; % Zahl der Massen
+x = y(1:N); % Erste Hälfte des Vektors y
+v = y((N+1):(2*N)); % Zweite Hälfte des Vektors y
+
+dx = v;
+dv = -inv(M)*C*x;
+
+dy = [dx; dv];
+```
+
+*Bsp. 3 N-dim Lösung*
+```Matlab
+% Matrixwerte
+m1 = 6.0e3; m2 = 6.0e3; m3 = 1.0e3;
+c1 = 3.0e6; c2 = 3.0e6; c3 = 1.0e6;
+M = diag([m1 m2 m3]); % M ist die Diagonalmatrix der Massen
+C = [c1 + c2, -c2, 0; -c2, c2 + c3, -c3; 0, -c3, c3]; % Steifigkeitsmatrix
+
+% Anfangsbedingungen
+x0 = zeros(3,1);
+v0 = [0; 0; 10];
+y0 =  [x0; v0];
+
+% DGL lösen
+tEnd = 2;
+%Benutzt schwingNd für N-Dimansionale Schwingerkette
+myfunc = @(t, y) schwingNd(t, y, M, C); 
+[t, y] = ode45(myfunc, [0 tEnd], y0);
+
+% Ergebnis plotten
+plot(t, y(:,1), t, y(:,2), t, y(:,3));
+legend("x_1", "x_2", "x_3", "Location", "best");
+
+F = getframe(gcf);
+imwrite(F.cdata, "bild26.png");
+```
+
+</br>
 
 ### Klassen
 *Vermutlich kommen Klassen überhaupt nicht dran. Hier aus Interesse:*
