@@ -1,9 +1,18 @@
 ## Inhalt
 
-1. [Spekulation](#Spekulation)
-2. [Tipps](#Tipps)
-3. [Funktionen und Befehle](#Funktionen-und-Befehle)
-4. [Datenstrukturen](#Datenstrukturen)
+- [Inhalt](#inhalt)
+- [Spekulation](#spekulation)
+- [Tipps](#tipps)
+- [Funktionen und Befehle](#funktionen-und-befehle)
+    - [Mit Zahlen arbeiten](#mit-zahlen-arbeiten)
+    - [Eingabe und Ausgabe](#eingabe-und-ausgabe)
+    - [Mit Dateien arbeiten](#mit-dateien-arbeiten)
+- [Datenstrukturen](#datenstrukturen)
+- [Differentialgleichungen](#differentialgleichungen)
+    - [Vorgehen zum erstellen der Funktion](#vorgehen-zum-erstellen-der-funktion)
+    - [Vorgehen für Lösungen:](#vorgehen-für-lösungen)
+    - [Beispiele:](#beispiele)
+- [Klassen](#klassen)
 
 ## Spekulation
 Vermutlich wichtige Themen:
