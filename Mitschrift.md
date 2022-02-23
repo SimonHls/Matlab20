@@ -1,9 +1,9 @@
 ## Inhalt
 
-1. [Spekulation](##Spekulation)
-2. [Tipps](##Tipps)
-3. [Funktionen und Befehle](##Funktionen-und-Befehle)
-4. [Datenstrukturen](##Datenstrukturen)
+1. [Spekulation](#Spekulation)
+2. [Tipps](#Tipps)
+3. [Funktionen und Befehle](#Funktionen-und-Befehle)
+4. [Datenstrukturen](#Datenstrukturen)
 
 ## Spekulation
 Vermutlich wichtige Themen:
