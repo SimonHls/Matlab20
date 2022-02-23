@@ -1,3 +1,10 @@
+## Inhalt
+
+1. [Spekulation](##Spekulation)
+2. [Tipps](##Tipps)
+3. [Funktionen und Befehle](##Funktionen-und-Befehle)
+4. [Datenstrukturen](##Datenstrukturen)
+
 ## Spekulation
 Vermutlich wichtige Themen:
 - Differentialgleichung programmieren / lösen 100%, vermutlich höherer Ordnung (keine Garantie)
@@ -10,14 +17,14 @@ Vermutlich wichtige Themen:
 
 ## Funktionen und Befehle
 
-### Mit Zahlen arbeiten
+#### Mit Zahlen arbeiten
 - **roots(MATRIX)** - *Löst Polynome, Eingabe ist Matrix z.B. [3, 2, 1] für 3x^2 + 2x + 1, geht auch mit höherer Ordnung. Ausgabe ist Lösung(en) der Gleichung.*
 - **integral(Funktion, linkeGrenz, rechteGrenze)** - *gibt das Integral der Funktion aus. Ggf. '@' vor die Funktion schreiben.*
 - **fzero(Funktion, BereichAlsMatrix oder Wert)** - *Gibt die Nullstellen im Bereich aus. Bereichsmatrix ist [linkeGrenze, rechteGrenze]. Bei mehr als einer Lösung im Bereich gibt er trotzdem nur eine Nullstelle aus. Anstatt der Bereichsmatrix kann man auch einen Wert eingeben. Dann gibt die Funktion die Nullstelle aus, die am nächsten an diesem Wert liegt.*
 - **solve(gleichung, Variable zum Auflösen)** - *Für Polynomgleichungen. Eingabe ist eine Gleichung und die gewünschte Variable zur Auflösung.*
 - **vpasolve(gleichung, Variable zum Auflösen, Positionoder Interval, ggf. 'Random', true)** - *Löst Gleichungen numerisch. Variable muss als "syms x;" deklariert werden. "'Random', true" gibt eine zufällige Lösung im Intervall aus, sonst wird immer die geringste Lösung ausgegeben. Für alle Lösungen im Intervall muss die Funktion mehrfach ausgeführt werden.*
   
-### Eingabe und Ausgabe
+#### Eingabe und Ausgabe
 - **fprintf("Text und Zeichen", Wert1, Wert2, Wert...)** - *Druckt Werte nach Vorgabe der in den Anführungszeichen definierten Parameter*
     - \n *- nächste Zeile*
     - Matrizen gibt man normalerweise Transponiert aus (also aus A wird A')
@@ -32,7 +39,7 @@ Vermutlich wichtige Themen:
 - **input("Text")** - *Fordert eine Nutzereingabe an. Der Text wird vor der Eingabe angezeigt. Wenn man Text eingeben will, muss man diesen in "" setzen.*
 - **plot(x, y, "b*")** - *Plottet eine Funktion mit x und y Werten. Das Argument "b***" ist optional und plottet dann anstatt als kurve als Sterne. Geht z.B. auch mit 'b.'.*
 
-### Mit Dateien arbeiten
+#### Mit Dateien arbeiten
 - **fid = fopen(Dateiname, "r")** - *Öffnet eine Datei und nennt diese 'fid'*
 - **fid = fopen(Dateiname, "w")** - *Öffnet ein Datei zum schreiben und nennt diese 'fid'*
 - **fid = fopen(Dateiname, "r+")** - *Öffnet eine Datei zum lesen und schreiben und nennt diese 'fid'*
@@ -42,12 +49,12 @@ Vermutlich wichtige Themen:
 - **dims = fscanf(fid, "%d %d\n", 2);** - *Hier werden Zweiervektoren ausgelesen, die nach dem Format 'Zahl, Zahl (nächste Zeile) Zahl, Zahl, usw.' gespeichert sind*
 - **fclose(fid)** - *Schließt die Datei fid*
 
-### Datenstrukturen
+## Datenstrukturen
 Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. #
 - **cell(x,y)** - *Erstellt ein Cell-Array, welches an jeder Stelle unterschiedliche Datentypen (Auch Arrays) speichern kann. Zugriff auf Stellen mit 'Name{x,y}'*
 - Man kan 'struct'-Objekte erstellen. Diese können wie eine Klasse mit *Name.Attribut* , *(z.B. p1.age = 12)* alles Mögliche speichern, ohne dass man die Klasse erst erstellen muss.
 
-### Differentialgleichungen:
+## Differentialgleichungen
 
 #### Vorgehen zum erstellen der Funktion
 *>>Anleitung für genaues Vorgehen folgt.<<*
@@ -176,7 +183,7 @@ imwrite(F.cdata, "bild26.png");
 
 </br>
 
-### Klassen
+## Klassen
 *Vermutlich kommen Klassen überhaupt nicht dran. Hier aus Interesse:*
 **Beispiel:**
 ``` Matlab
