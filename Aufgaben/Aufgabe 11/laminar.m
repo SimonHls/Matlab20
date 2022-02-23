@@ -1,9 +1,9 @@
-function dy = laminar(t, y)
-% Laminare Reibung 
-% Rechte Seite des DGLs für laminare Reibung
+function dy = laminar(t,y,m,g,b1,b2)
+% rechte Seite der DGL bei laminarem freien Fall
+% Parameter
 
-b1 = 5;
+Fr = -b1*y(2);
 
-dy = -b1 * y;
-
-end
+dy1 = y(2);
+dy2 = -g+Fr./m;
+dy = [dy1; dy2];
