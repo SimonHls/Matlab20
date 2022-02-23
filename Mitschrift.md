@@ -11,13 +11,13 @@
 - [Differentialgleichungen](#differentialgleichungen)
     - [Vorgehen zum erstellen der Funktion](#vorgehen-zum-erstellen-der-funktion)
     - [Vorgehen für Lösungen:](#vorgehen-für-lösungen)
-    - [Beispiele:](#beispiele)
+    - [Beispiele](#beispiele)
 - [Klassen](#klassen)
 
 ## Spekulation
 Vermutlich wichtige Themen:
 - Differentialgleichung programmieren / lösen 100%, vermutlich höherer Ordnung (keine Garantie)
-- 
+- Formatieren von Plots, z.B. Farben von Kurven ändern o.ä.
 ## Tipps
 
 - Quadratische Matrizen vermeiden, indem man z.B. unterschiedliche Schrittweiten in der Darstellung benutzt. So bekommt man bei falscher Verwendung von einem '.' eine Fehlermeldung.
@@ -27,11 +27,12 @@ Vermutlich wichtige Themen:
 ## Funktionen und Befehle
 
 #### Mit Zahlen arbeiten
-- **roots(MATRIX)** - *Löst Polynome, Eingabe ist Matrix z.B. [3, 2, 1] für 3x^2 + 2x + 1, geht auch mit höherer Ordnung. Ausgabe ist Lösung(en) der Gleichung.*
+- **roots(MATRIX)** - *Löst Polynome, für 3x^2 + 2x + 1 ist Eingabematrix [3, 2, 1], geht auch mit höherer Ordnung. Ausgabe ist Lösung(en) der Gleichung.*
 - **integral(Funktion, linkeGrenz, rechteGrenze)** - *gibt das Integral der Funktion aus. Ggf. '@' vor die Funktion schreiben.*
 - **fzero(Funktion, BereichAlsMatrix oder Wert)** - *Gibt die Nullstellen im Bereich aus. Bereichsmatrix ist [linkeGrenze, rechteGrenze]. Bei mehr als einer Lösung im Bereich gibt er trotzdem nur eine Nullstelle aus. Anstatt der Bereichsmatrix kann man auch einen Wert eingeben. Dann gibt die Funktion die Nullstelle aus, die am nächsten an diesem Wert liegt.*
 - **solve(gleichung, Variable zum Auflösen)** - *Für Polynomgleichungen. Eingabe ist eine Gleichung und die gewünschte Variable zur Auflösung.*
 - **vpasolve(gleichung, Variable zum Auflösen, Positionoder Interval, ggf. 'Random', true)** - *Löst Gleichungen numerisch. Variable muss als "syms x;" deklariert werden. "'Random', true" gibt eine zufällige Lösung im Intervall aus, sonst wird immer die geringste Lösung ausgegeben. Für alle Lösungen im Intervall muss die Funktion mehrfach ausgeführt werden.*
+- **M = diag(v)** - *macht aus einem Vektor v eine Diagonalmatrix M*
   
 #### Eingabe und Ausgabe
 - **fprintf("Text und Zeichen", Wert1, Wert2, Wert...)** - *Druckt Werte nach Vorgabe der in den Anführungszeichen definierten Parameter*
@@ -59,7 +60,7 @@ Vermutlich wichtige Themen:
 - **fclose(fid)** - *Schließt die Datei fid*
 
 ## Datenstrukturen
-Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. #
+Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. 
 - **cell(x,y)** - *Erstellt ein Cell-Array, welches an jeder Stelle unterschiedliche Datentypen (Auch Arrays) speichern kann. Zugriff auf Stellen mit 'Name{x,y}'*
 - Man kan 'struct'-Objekte erstellen. Diese können wie eine Klasse mit *Name.Attribut* , *(z.B. p1.age = 12)* alles Mögliche speichern, ohne dass man die Klasse erst erstellen muss.
 
@@ -77,7 +78,7 @@ Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespe
 - Gelöst durch **[t, y] = ode45(f, tspan, y0)**  *, mit f = Funktion; tpan = Zeitspanne als [0, tmax] (der Vektor kann auch länger sein als 2, dann werden die Werte an den definierten Stellen ausgegeben); y0 = y-Wert an der Stelle 0 (Startwert/e, ggf. als Vektor)*
 - ggf. Plot formatieren.
 
-#### Beispiele:
+#### Beispiele
 
 **Beispiel 1**
 
@@ -109,7 +110,7 @@ legend("x_1(t)", "x_2(t)", "Location", "best");
 ```
 </br>
 
-**Beispiel 2**
+**Beispiel 2 - Matrixverfahren**
 
 *Bsp. 2: Matrix Funktion*
 ```Matlab
