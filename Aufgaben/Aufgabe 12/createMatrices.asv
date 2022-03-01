@@ -7,19 +7,23 @@ function [M, C] = createMatrices(chain)
 m = chain.m;
 c = chain.c;
 
-M = diag(m)
+% M ist einfach eine Diagonalmatrix aus m
+M = diag(m);
 
-clength = length(c);
-C = zeros(clength - 1);
+% C-Matrix erstellen
+C = zeros(length(c) - 1);
 
-C(1,1) = c(1) + c(2);
-C(1,2) = -c(2);
-C(2,1) = -c(2);
-C(2,2) = c(2) + c(3);
-C(2,3) = -c(3);
-C(3,2) = -c(3);
-C(3,3) = 
+% Werte aus dem chain-objekt in c-matrix einfügen:
 
+% Diagonale Werte einfügen
+for k = 1:length(c)-1
+    C(k,k) = c(k) + c(k + 1);
+    C(k,k+1) = -c(+1);
+end
 
+% Werte oberhalb und unterhalb der Diagonalen einfügen
+for l = 1:length(c)-2
+    C(l,l+1) = -c(l+1);
+end
 
-
+C
