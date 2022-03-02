@@ -10,10 +10,10 @@ c = chain.c;
 % M ist einfach eine Diagonalmatrix aus m
 M = diag(m);
 
-% C-Matrix erstellen
+% C-Matrix erstellen, ist immer quadrat. Matrix mit Dim. c-1 x c-1
 C = zeros(length(c) - 1);
 
-% Werte aus dem chain-objekt in c-matrix einfügen:
+% Werte c aus dem chain-objekt in C-matrix einfügen:
 
 % Diagonale Werte einfügen
 for k = 1:length(c)-1
