@@ -1,0 +1,24 @@
+% Öffnet ein Bild, filtert schwarze und weiße Pixel, zeigt das Bild an.
+
+B = imread("bild32.gif");
+% Alternatives Bild:
+% B = imread("bild33.jpg");
+
+scale = (0:255)'/255;
+scale2 = rem((0:255)'/16, 1);
+scale3 = rem((0:255)'/32, 1);
+
+graymap = [scale, scale2, scale3];
+
+colormap(1 - graymap); 
+% colormap("colorcube"); % Ich bevorzuge "colorcube" für bild33.jpg
+
+image(B);
+
+% Bild filtern mit "Image Processing Toolbox"
+% B3 = medfilt2(B);
+% image(B3);
+
+axis("off");
+axis("image");
+colorbar

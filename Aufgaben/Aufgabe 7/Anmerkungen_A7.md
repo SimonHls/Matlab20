@@ -1,5 +1,7 @@
 Gegeben war: Die Gleichung von Aufgabe 7 im Intervall 1:10 hat vier Lösungen
 
+**Achtung: Lösung für Aufgabe 7 benutzt die Funktion vpasolve, welche Teil der Symbolic Toolbox ist. Geht also nicht bei jede, weiß nicht wie das bei ner Klausur aussieht.**
+
 Ich habe zwei Lösungswege gefunden:
 
 #### Aufgabe7easy.m
