@@ -29,8 +29,6 @@ y4 = createSineWave(4*f, A/4, T);
 y5 = createSineWave(5*f, A/5, T);
 y6 = createSineWave(6*f, A/6, T);
 y = y1 + y2 + y3 + y4 + y5 + y6;
-plot(t,y);
-xlim([0;12e-3]);
 
 yEnv = createEnvelope(0.1, 1.2, 0.6, T);
 yH = yEnv.*y;
