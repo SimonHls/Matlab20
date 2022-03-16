@@ -63,6 +63,7 @@ Vermutlich wichtige Themen:
 Es gibt die typischen Datentypen. Alle Daten werden in Array-Form / Matrix gespeichert. Um einer Zahl in ein bestimmtes Format zu drängen, z.B. int32, dann initialisiert man als **"a = int32(*zahl*)"**. 
 - **cell(x,y)** - *Erstellt ein Cell-Array, welches an jeder Stelle unterschiedliche Datentypen (Auch Arrays) speichern kann. Zugriff auf Stellen mit 'Name{x,y}'*
 - Man kan 'struct'-Objekte erstellen. Diese können wie eine Klasse mit *Name.Attribut* , *(z.B. p1.age = 12)* alles Mögliche speichern, ohne dass man die Klasse erst erstellen muss.
+- Auf bestimmte Zeilen / Spalten auf Matrix zugreifen: s1 = matrix(:,1); z2 = matrix(2,:);
 
 ## Differentialgleichungen
 
