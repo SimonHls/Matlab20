@@ -17,6 +17,7 @@ for j = 1:nFrames*nLoop
   trussT.x0(1,1:N) = truss.x0(1,1:N) + amp*sin(t)*xe(1:2:end)';
   trussT.x0(2,1:N) = truss.x0(2,1:N) + amp*sin(t)*xe(2:2:end)';
   
-  plotTruss(axes, trussT); %Funktion fehlt in diesem Verzeichnis, deshalb gehts nicht
+  plotTruss(axes, trussT); %Funktion fehlt in diesem Verzeichnis, 
+                           % deshalb gehts nicht
   drawnow;
 end
