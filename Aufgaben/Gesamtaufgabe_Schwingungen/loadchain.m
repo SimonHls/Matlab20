@@ -13,6 +13,8 @@ function loadchain(filename)
         c = Federsteifigkeiten der einzelnen Schwinger
         y = Anfangsauslenkungen als Abstand von der Nullachse
     
+        Test Test. Ein kleines Experiment.
+
     filename = Name der Datei (ohne Endung .chain)
     %}
     
