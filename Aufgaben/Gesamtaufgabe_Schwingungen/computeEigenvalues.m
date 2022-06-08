@@ -4,6 +4,7 @@ function [Phi, freq] = computeEigenvalues(M, C)
     % Parameter
     %    M     Massenmatrix
     %    C     Steifigkeitsmatrix
+    %    Test 2
     
     [Phi, om2] = eig(C,M);
     freq = sqrt(diag(om2))/(2*pi);
