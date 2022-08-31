@@ -223,4 +223,4 @@ end
 - Zugreifen auf Inhalt: *var1InKlasse = testklasse.var1* 
 - Unter functions können auch komplexere Operationen implementiert werden, die man erreicht mit : *funktionInKlasse = testklasse.tuEtwas(parameter)*
 
-*Ich muss zugeben, dass ich irgendwann aufgehört habe hier alles reinzuschreiben. Zur Not sind aber die Beispiele evtl. noch nützlich*
+*Ich muss zugeben, dass ich irgendwann aufgehört habe hier alles reinzuschreiben. Zur Not sind aber die Beispiele evtl. noch nützlich.*
