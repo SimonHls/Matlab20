@@ -222,3 +222,5 @@ end
 - Erstellen mit Kontruktor setzt Parameter sofort: *testklasse = Beispiel(var1, var2, var3)*
 - Zugreifen auf Inhalt: *var1InKlasse = testklasse.var1* 
 - Unter functions können auch komplexere Operationen implementiert werden, die man erreicht mit : *funktionInKlasse = testklasse.tuEtwas(parameter)*
+
+*Ich muss zugeben, dass ich irgendwann aufgehört habe hier alles reinzuschreiben. Zur Not sind aber die Beispiele evtl. noch nützlich*
